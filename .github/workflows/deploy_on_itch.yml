@@ -31,7 +31,7 @@ jobs:
       # Cache
       - name: Restore Library Cache
         run: |                          #change path here for name of runner (user name)
-              if [ -d "@Home/build_cache/Library-${{ matrix.targetPlatform }}" ]; then
+              if [ -d "$HOME/build_cache/Library-${{ matrix.targetPlatform }}" ]; then
                 echo "Restoring Library cache..."
                 cp -r ~/build_cache/Library-${{ matrix.targetPlatform }} Library 
               else

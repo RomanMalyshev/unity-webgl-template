@@ -19,7 +19,6 @@ jobs:
       fail-fast: false
       matrix:
         targetPlatform:
-          #- StandaloneWindows64 # Build a Windows 64-bit standalone.
           - WebGL
     steps:
       # Checkout
@@ -30,7 +29,7 @@ jobs:
           lfs: true
       # Cache
       - name: Restore Library Cache
-        run: |                          #change path here for name of runner (user name)
+        run: |                   
               if [ -d "$HOME/build_cache/Library-${{ matrix.targetPlatform }}" ]; then
                 echo "Restoring Library cache..."
                 cp -r ~/build_cache/Library-${{ matrix.targetPlatform }} Library 
@@ -52,7 +51,7 @@ jobs:
           name: Build-${{ matrix.targetPlatform }}
           path: build/${{ matrix.targetPlatform }}
       - name: Store Library Cache
-        run: |  #change path here for name of runner (user name)
+        run: | 
               echo "Saving Library cache..."
               mkdir -p ~/build_cache/
               rm -rf ~/build_cache/Library-${{ matrix.targetPlatform }}
@@ -78,8 +77,8 @@ jobs:
         env:
           BUTLER_CREDENTIALS: ${{ secrets.BUTLER_CREDENTIALS }}
           CHANNEL: html5
-          ITCH_GAME: viewinthedepth
-          ITCH_USER: noagard
+          ITCH_GAME: template #Set page name from itch
+          ITCH_USER: noagard #Set itch user name
           PACKAGE: build/WebGL
       - name: Cleanup to avoid storage limit
         if: always()

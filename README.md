@@ -1,17 +1,17 @@
-# 🧱 Unity Project Setup & CI/CD Notes
+# Unity Project Setup & CI/CD Notes
 
 This document contains setup steps, project configuration, and dependency notes for the Unity project.
 
 ---
 
-## ⚙️ CI/CD Pipeline (GameCI + WSL)
+## CI/CD Pipeline (GameCI + WSL)
 
 ### 1. Install WSL
 Install **WSL** (Windows Subsystem for Linux) from the Microsoft Store.
 
 ### 2. Configure Ubuntu Environment
 Follow the official GameCI setup guide:  
-🔗 [Host Provisioning - Ubuntu Setup](https://game.ci/docs/self-hosting/host-provisioning/ubuntu-setup)
+[Host Provisioning - Ubuntu Setup](https://game.ci/docs/self-hosting/host-provisioning/ubuntu-setup)
 
 After installation:
 - Create a new user for the build agent.
@@ -26,7 +26,7 @@ Include:
 
 ---
 
-## 🏗️ Unity Project Settings
+## Unity Project Settings
 
 ### General Settings
 - **Disable Scene and Domain Reload** (to speed up play mode iteration)
@@ -38,7 +38,7 @@ Include:
 
 ---
 
-## 📦 Additional Packages
+## Additional Packages
 
 | Package | Purpose |
 |----------|----------|
@@ -47,7 +47,7 @@ Include:
 
 ---
 
-## 🧹 Disabled Unity Modules
+## Disabled Unity Modules
 
 These modules were manually removed to reduce build size and memory footprint:
 
